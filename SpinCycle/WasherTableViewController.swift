@@ -63,16 +63,24 @@ class WasherTableViewController: UITableViewController {
         
         return cell //Return the created cell
     }
+    
+    //We have to override this method to make sure our application can connect to multiple ViewControllers
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("washerInfo", sender: self)
+    }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
+    //Override, do nothing
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
     }
     
+    //Create the actions for the slide
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
         if(self.machines[indexPath.row].inUse){
@@ -80,7 +88,10 @@ class WasherTableViewController: UITableViewController {
                 //Update the watch count
                 self.machines[indexPath.row].watchCount = self.machines[indexPath.row].watchCount + 1
                 
+                //self.tableView.reloadData()
+                //self.performSegueWithIdentifier("startMachine", sender: self)
             });
+            
             watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
             
             
@@ -91,7 +102,7 @@ class WasherTableViewController: UITableViewController {
             var startAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Start", handler:{action, indexpath in
                 //Update the watch count
                 self.machines[indexPath.row].inUse = true
-                //self.performSegueWithIdentifier("startLoad", sender: self)
+                self.performSegueWithIdentifier("startMachine", sender: self)
                 
             });
             

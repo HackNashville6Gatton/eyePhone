@@ -32,9 +32,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="eNb-Df-Tgt" kind="show" identifier="washerInfo" id="199-yM-pPZ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,10 +40,39 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SpinCycle" id="vfe-Vy-iee"/>
+                    <connections>
+                        <segue destination="fWT-QH-BHR" kind="show" identifier="startMachine" id="tjH-Ru-mZm"/>
+                        <segue destination="eNb-Df-Tgt" kind="show" identifier="washerInfo" id="ETi-gJ-Znj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEo-qn-vjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="371" y="201"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GdC-FM-RR4">
+            <objects>
+                <viewController id="fWT-QH-BHR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q4G-ZD-U6o"/>
+                        <viewControllerLayoutGuide type="bottom" id="WJH-CL-Zjh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Me0-Ux-CeJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Start" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="um6-qX-r7e">
+                                <rect key="frame" x="262" y="297" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ry-tQ-CYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="-419"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7HG-F8-D5J">
@@ -59,12 +85,19 @@
                     <view key="view" contentMode="scaleToFill" id="acp-LX-GqF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Info" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C9h-cg-Y6G">
+                                <rect key="frame" x="251" y="202" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chD-E3-sTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="201"/>
+            <point key="canvasLocation" x="1182" y="240"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NcD-46-4ox">
@@ -81,6 +114,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYC-1D-hMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-449" y="201"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2E8-QA-CFN">
+            <objects>
+                <viewController id="qfz-Vj-dZf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l8b-Sb-Gic"/>
+                        <viewControllerLayoutGuide type="bottom" id="fbZ-1G-hfe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XJ6-7Q-R1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Plq-Sr-dlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>
