@@ -38,9 +38,9 @@ class LaundryMachine: NSObject {
     
     
     //Enum to determine what type of machine we are using
-    enum Machine : Int{
-        case Washer = 0
-        case Dryer = 1
+    enum Machine : String{
+        case Washer = "Washer"
+        case Dryer = "Dryer"
     }
     
     

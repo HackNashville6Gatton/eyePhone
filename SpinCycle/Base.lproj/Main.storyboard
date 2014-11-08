@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eNb-Df-Tgt" kind="show" id="Ya6-3D-Zhu"/>
+                                    <segue destination="eNb-Df-Tgt" kind="show" identifier="washerInfo" id="Ya6-3D-Zhu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

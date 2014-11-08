@@ -48,6 +48,23 @@ class WasherTableViewController: UITableViewController {
         
         return cell //Return the created cell
     }
+    
+    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        NSLog("Type: %@  Number:%d", self.machines[indexPath.row].typeMachine.rawValue, self.machines[indexPath.row].number)
+//    }
+    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        self.performSegueWithIdentifier("washerInfo", sender: tableView)
+//    }
+    
+    //This allows us to prepare to send information to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "washerInfo" {
+            let washerDetailViewController = segue.destinationViewController as UIViewController
+            
+        }
+    }
 
 
    
