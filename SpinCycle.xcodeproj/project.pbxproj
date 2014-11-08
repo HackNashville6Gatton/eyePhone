@@ -14,6 +14,9 @@
 		C01937CF1A0E72C300DD0DDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01937CD1A0E72C300DD0DDA /* LaunchScreen.xib */; };
 		C01937DB1A0E72C300DD0DDA /* SpinCycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937DA1A0E72C300DD0DDA /* SpinCycleTests.swift */; };
 		C01937E51A0E757D00DD0DDA /* LaundryMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */; };
+		C01937E81A0E849B00DD0DDA /* blank card hi-res.png in Resources */ = {isa = PBXBuildFile; fileRef = C01937E61A0E849B00DD0DDA /* blank card hi-res.png */; };
+		C01937E91A0E849B00DD0DDA /* blank card rounded corner.png in Resources */ = {isa = PBXBuildFile; fileRef = C01937E71A0E849B00DD0DDA /* blank card rounded corner.png */; };
+		C01937EB1A0E906500DD0DDA /* WasherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		C01937D91A0E72C300DD0DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01937DA1A0E72C300DD0DDA /* SpinCycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinCycleTests.swift; sourceTree = "<group>"; };
 		C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryMachine.swift; sourceTree = "<group>"; };
+		C01937E61A0E849B00DD0DDA /* blank card hi-res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank card hi-res.png"; path = "../../../Misc/Matchismo/Matchismo/Images.xcassets/cardfront.imageset/blank card hi-res.png"; sourceTree = "<group>"; };
+		C01937E71A0E849B00DD0DDA /* blank card rounded corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank card rounded corner.png"; path = "../../../Misc/Matchismo/Matchismo/Images.xcassets/cardfront.imageset/blank card rounded corner.png"; sourceTree = "<group>"; };
+		C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasherTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 				C01937C61A0E72C300DD0DDA /* ViewController.swift */,
 				C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */,
 				C01937C81A0E72C300DD0DDA /* Main.storyboard */,
+				C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */,
 				C01937CB1A0E72C300DD0DDA /* Images.xcassets */,
 				C01937CD1A0E72C300DD0DDA /* LaunchScreen.xib */,
 				C01937C21A0E72C300DD0DDA /* Supporting Files */,
@@ -92,6 +99,8 @@
 		C01937C21A0E72C300DD0DDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C01937E61A0E849B00DD0DDA /* blank card hi-res.png */,
+				C01937E71A0E849B00DD0DDA /* blank card rounded corner.png */,
 				C01937C41A0E72C300DD0DDA /* AppDelegate.swift */,
 				C01937C31A0E72C300DD0DDA /* Info.plist */,
 			);
@@ -196,7 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01937CA1A0E72C300DD0DDA /* Main.storyboard in Resources */,
+				C01937E91A0E849B00DD0DDA /* blank card rounded corner.png in Resources */,
 				C01937CF1A0E72C300DD0DDA /* LaunchScreen.xib in Resources */,
+				C01937E81A0E849B00DD0DDA /* blank card hi-res.png in Resources */,
 				C01937CC1A0E72C300DD0DDA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +229,7 @@
 				C01937C71A0E72C300DD0DDA /* ViewController.swift in Sources */,
 				C01937E51A0E757D00DD0DDA /* LaundryMachine.swift in Sources */,
 				C01937C51A0E72C300DD0DDA /* AppDelegate.swift in Sources */,
+				C01937EB1A0E906500DD0DDA /* WasherTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
