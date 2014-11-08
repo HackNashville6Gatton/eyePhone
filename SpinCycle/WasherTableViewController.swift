@@ -16,8 +16,12 @@ class WasherTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var first = LaundryMachine(number: 1, typeOfMachine: LaundryMachine.Machine.Washer)
+        first.inUse = false
+        var second = LaundryMachine(number: 2, typeOfMachine: LaundryMachine.Machine.Washer)
+        second.inUse = true
         
-        self.machines = [LaundryMachine(number: 1, typeOfMachine: LaundryMachine.Machine.Washer), LaundryMachine(number: 2, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 3, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 4, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 5, typeOfMachine: LaundryMachine.Machine.Washer), LaundryMachine(number: 1, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 2, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 3, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 4, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 5, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 6, typeOfMachine: LaundryMachine.Machine.Dryer)]
+        self.machines = [first, second,LaundryMachine(number: 3, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 4, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 5, typeOfMachine: LaundryMachine.Machine.Washer), LaundryMachine(number: 1, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 2, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 3, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 4, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 5, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 6, typeOfMachine: LaundryMachine.Machine.Dryer)]
         
         
         self.tableView.reloadData() //Reload the
@@ -41,10 +45,12 @@ class WasherTableViewController: UITableViewController {
         
         let currentMachine = self.machines[indexPath.row] //Our currentMachine will be the indexPath.row
         
-        cell.textLabel.text = NSString(format: "%d", currentMachine.number) //Set the text of the cell
+        cell.textLabel.text = NSString(format: "%@: %d", currentMachine.typeMachine.rawValue, currentMachine.number) //Set the text of the cell
         
         
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator //This means that our cell has push action when pressed
+        
+       // cell.imageView.image = UIImage(
         
         return cell //Return the created cell
     }
@@ -60,19 +66,38 @@ class WasherTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
-        var watchAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Watch", handler:{action, indexpath in
+        if(self.machines[indexPath.row].inUse){
+            var watchAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSString(format: "Watch(%d)", self.machines[indexPath.row].watchCount), handler:{action, indexpath in
                 //Update the watch count
                 self.machines[indexPath.row].watchCount = self.machines[indexPath.row].watchCount + 1
+                
+            });
+            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
             
-            });
-        watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
+            
+            return [watchAction];
+        }
         
-        var moreInfoAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "More", handler:{action, indexpath in
-                println("DELETE•ACTION");
+        else{
+            var startAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Start", handler:{action, indexpath in
+                //Update the watch count
+                self.machines[indexPath.row].inUse = true
+                //self.performSegueWithIdentifier("startLoad", sender: self)
+                
             });
-        moreInfoAction.backgroundColor = UIColor(red:0.95, green:0.60, blue:0.60, alpha:1.0)
+            
+            startAction.backgroundColor = UIColor(red:0.12, green:0.86, blue:0.12, alpha:1.0)
+            
+            
+            return [startAction];
+
+        }
         
-        return [moreInfoAction, watchAction];
+//        var moreInfoAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "More", handler:{action, indexpath in
+//            self.performSegueWithIdentifier("washerInfo", sender: self) //If they want more information about the thingie
+//            });
+//        moreInfoAction.backgroundColor = UIColor(red:0.95, green:0.60, blue:0.60, alpha:1.0)
+        
     }
     
     
@@ -90,6 +115,7 @@ class WasherTableViewController: UITableViewController {
             let washerDetailViewController = segue.destinationViewController as UIViewController
             
         }
+        
     }
 
 
