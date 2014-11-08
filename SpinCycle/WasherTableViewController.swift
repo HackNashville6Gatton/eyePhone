@@ -48,6 +48,32 @@ class WasherTableViewController: UITableViewController {
         
         return cell //Return the created cell
     }
+
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        var watchAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Watch", handler:{action, indexpath in
+                //Update the watch count
+                self.machines[indexPath.row].watchCount = self.machines[indexPath.row].watchCount + 1
+            
+            });
+        watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
+        
+        var moreInfoAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "More", handler:{action, indexpath in
+                println("DELETE•ACTION");
+            });
+        moreInfoAction.backgroundColor = UIColor(red:0.95, green:0.60, blue:0.60, alpha:1.0)
+        
+        return [moreInfoAction, watchAction];
+    }
     
     
 //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
