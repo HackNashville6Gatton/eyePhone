@@ -48,8 +48,17 @@ class WasherTableViewController: UITableViewController {
         cell.textLabel.text = NSString(format: "%@: %d", currentMachine.typeMachine.rawValue, currentMachine.number) //Set the text of the cell
         
         
+        
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator //This means that our cell has push action when pressed
         
+        //Set the status of the machine
+        if !self.machines[indexPath.row].inUse {
+            cell.detailTextLabel!.text = "Open"
+        }
+        else{
+            cell.detailTextLabel!.text = NSString(format: "%f", self.machines[indexPath.row].timeRemaining)
+            cell.detailTextLabel!.textColor = UIColor.redColor()
+        }
        // cell.imageView.image = UIImage(
         
         return cell //Return the created cell
@@ -92,11 +101,6 @@ class WasherTableViewController: UITableViewController {
             return [startAction];
 
         }
-        
-//        var moreInfoAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "More", handler:{action, indexpath in
-//            self.performSegueWithIdentifier("washerInfo", sender: self) //If they want more information about the thingie
-//            });
-//        moreInfoAction.backgroundColor = UIColor(red:0.95, green:0.60, blue:0.60, alpha:1.0)
         
     }
     
