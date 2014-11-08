@@ -13,6 +13,7 @@
 		C01937CC1A0E72C300DD0DDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01937CB1A0E72C300DD0DDA /* Images.xcassets */; };
 		C01937CF1A0E72C300DD0DDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01937CD1A0E72C300DD0DDA /* LaunchScreen.xib */; };
 		C01937DB1A0E72C300DD0DDA /* SpinCycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937DA1A0E72C300DD0DDA /* SpinCycleTests.swift */; };
+		C01937E51A0E757D00DD0DDA /* LaundryMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C01937D41A0E72C300DD0DDA /* SpinCycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpinCycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01937D91A0E72C300DD0DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01937DA1A0E72C300DD0DDA /* SpinCycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinCycleTests.swift; sourceTree = "<group>"; };
+		C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,8 @@
 		C01937C11A0E72C300DD0DDA /* SpinCycle */ = {
 			isa = PBXGroup;
 			children = (
-				C01937C41A0E72C300DD0DDA /* AppDelegate.swift */,
 				C01937C61A0E72C300DD0DDA /* ViewController.swift */,
+				C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */,
 				C01937C81A0E72C300DD0DDA /* Main.storyboard */,
 				C01937CB1A0E72C300DD0DDA /* Images.xcassets */,
 				C01937CD1A0E72C300DD0DDA /* LaunchScreen.xib */,
@@ -90,6 +92,7 @@
 		C01937C21A0E72C300DD0DDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C01937C41A0E72C300DD0DDA /* AppDelegate.swift */,
 				C01937C31A0E72C300DD0DDA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01937C71A0E72C300DD0DDA /* ViewController.swift in Sources */,
+				C01937E51A0E757D00DD0DDA /* LaundryMachine.swift in Sources */,
 				C01937C51A0E72C300DD0DDA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
