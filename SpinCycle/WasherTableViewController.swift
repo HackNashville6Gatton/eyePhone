@@ -131,6 +131,10 @@ class WasherTableViewController: UITableViewController {
             
         }
         
+        if segue.identifier == "startMachine" {
+            let startViewController = segue.destinationViewController as UIViewController
+        }
+        
     }
 
 

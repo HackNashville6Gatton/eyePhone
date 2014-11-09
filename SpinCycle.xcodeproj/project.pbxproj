@@ -421,6 +421,7 @@
 				C01937E01A0E72C300DD0DDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C01937E11A0E72C300DD0DDA /* Build configuration list for PBXNativeTarget "SpinCycleTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +430,7 @@
 				C01937E31A0E72C300DD0DDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
