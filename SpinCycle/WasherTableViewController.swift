@@ -17,7 +17,10 @@ class WasherTableViewController: UITableViewController {
     var number: Int = 0 //And the number
     var status: Bool = true //And the status
     
-  
+    //Retrieve the user's current device information
+    var user: User = User(idNum: UIDevice.currentDevice().identifierForVendor) //now instantiate our own user class
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,32 +95,53 @@ class WasherTableViewController: UITableViewController {
         
     }
     
+    
     //Create the actions for the slide
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
         if(self.machines[indexPath.row].inUse){
-            var watchAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSString(format: "Watch(%d)", self.machines[indexPath.row].watchCount), handler:{action, indexpath in
-                
-                //Store all the information regarding the current machine being looked at
-                let machine = self.machines[indexPath.row]
-                let type = machine.typeMachine.rawValue
-                let num = machine.number
-                let description = String(format: "Now watching %@ %d", type, num)
-                //Update the watch count
-                self.machines[indexPath.row].watchCount = self.machines[indexPath.row].watchCount + 1
-                
-                //Reload the data
-                self.tableView.reloadData()
-                
-                //Let user know they are watching the machine--I am hoping to change this to where we don't need to show an alert, it would automatically reload the information
-                var toast = UIAlertView(title: "Watching", message: description, delegate: self, cancelButtonTitle: "Ok")
-                toast.show()
-            });
             
-//            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
-            watchAction.backgroundColor = UIColor(red: 24/255.0, green:116/255.0, blue:205/255.0, alpha:1.0)
+            //If the user is already watching this machine, then we need to have a different action for them. Gray out the button and tell them they are watching the machine.
+            if contains(self.user.watching, self.machines[indexPath.row]){
+                var alreadyWatchingAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSString(format: "Watch(%d)", self.machines[indexPath.row].watchCount), handler:{action, indexpath in
+                    
+                    
+                });
+                
+                alreadyWatchingAction.backgroundColor = UIColor.grayColor()
+                
+                return [alreadyWatchingAction];
+            }
             
-            return [watchAction];
+                //Otherwise, the user is NOT watching the machine. If they click on it, update. 
+            else{
+                var watchAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSString(format: "Watch(%d)", self.machines[indexPath.row].watchCount), handler:{action, indexpath in
+                    
+                    //Update our user class
+                    self.user.userWatch(self.machines[indexPath.row])
+                    
+                    //Store all the information regarding the current machine being looked at
+                    let machine = self.machines[indexPath.row]
+                    let type = machine.typeMachine.rawValue
+                    let num = machine.number
+                    let description = String(format: "Now watching %@ %d", type, num)
+                    //Update the watch count
+                    self.machines[indexPath.row].watchCount = self.machines[indexPath.row].watchCount + 1
+                    
+                    //Reload the data
+                    self.tableView.reloadData()
+                    
+                    //Let user know they are watching the machine--I am hoping to change this to where we don't need to show an alert, it would automatically reload the information
+                    var toast = UIAlertView(title: "Watching", message: description, delegate: self, cancelButtonTitle: "Ok")
+                    toast.show()
+                });
+                
+                //            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
+                watchAction.backgroundColor = UIColor(red: 24/255.0, green:116/255.0, blue:205/255.0, alpha:1.0)
+                
+                return [watchAction];
+            }
+            
         }
         
         else{

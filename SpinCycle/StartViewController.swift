@@ -10,8 +10,10 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var typeMachineLabel: UILabel!
+    @IBOutlet weak var numberMachineLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDatePicker()
@@ -30,6 +32,7 @@ class StartViewController: UIViewController {
         dateFormatter.dateFormat = "h:mm a"
         
         NSLog("%@", dateFormatter.stringFromDate(self.datePicker.date))
+        NSLog("%@", self.datePicker.countDownDuration)
         
         
     }

@@ -19,6 +19,7 @@
 		C01937E81A0E849B00DD0DDA /* blank card hi-res.png in Resources */ = {isa = PBXBuildFile; fileRef = C01937E61A0E849B00DD0DDA /* blank card hi-res.png */; };
 		C01937E91A0E849B00DD0DDA /* blank card rounded corner.png in Resources */ = {isa = PBXBuildFile; fileRef = C01937E71A0E849B00DD0DDA /* blank card rounded corner.png */; };
 		C01937EB1A0E906500DD0DDA /* WasherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */; };
+		C0EF0D1A1A0FDAAD0056A762 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF0D191A0FDAAD0056A762 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C01937E61A0E849B00DD0DDA /* blank card hi-res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank card hi-res.png"; path = "../../../Misc/Matchismo/Matchismo/Images.xcassets/cardfront.imageset/blank card hi-res.png"; sourceTree = "<group>"; };
 		C01937E71A0E849B00DD0DDA /* blank card rounded corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank card rounded corner.png"; path = "../../../Misc/Matchismo/Matchismo/Images.xcassets/cardfront.imageset/blank card rounded corner.png"; sourceTree = "<group>"; };
 		C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasherTableViewController.swift; sourceTree = "<group>"; };
+		C0EF0D191A0FDAAD0056A762 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				C01937C81A0E72C300DD0DDA /* Main.storyboard */,
 				C010DD6A1A0EFC5400E29BAB /* StartViewController.swift */,
 				C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */,
+				C0EF0D191A0FDAAD0056A762 /* User.swift */,
 				C01937CB1A0E72C300DD0DDA /* Images.xcassets */,
 				C01937CD1A0E72C300DD0DDA /* LaunchScreen.xib */,
 				C01937C21A0E72C300DD0DDA /* Supporting Files */,
@@ -238,6 +241,7 @@
 				C01937C51A0E72C300DD0DDA /* AppDelegate.swift in Sources */,
 				C01937EB1A0E906500DD0DDA /* WasherTableViewController.swift in Sources */,
 				C010DD6B1A0EFC5400E29BAB /* StartViewController.swift in Sources */,
+				C0EF0D1A1A0FDAAD0056A762 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

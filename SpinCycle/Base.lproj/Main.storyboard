@@ -41,8 +41,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="SpinCycle" id="vfe-Vy-iee"/>
                     <connections>
-                        <segue destination="fWT-QH-BHR" kind="show" identifier="startMachine" id="tjH-Ru-mZm"/>
                         <segue destination="eNb-Df-Tgt" kind="show" identifier="washerInfo" id="ETi-gJ-Znj"/>
+                        <segue destination="NoQ-Bx-xNo" kind="show" identifier="startMachine" id="4bH-TK-7lZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEo-qn-vjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,68 +50,71 @@
             <point key="canvasLocation" x="346" y="48"/>
         </scene>
         <!--Start View Controller-->
-        <scene sceneID="GdC-FM-RR4">
+        <scene sceneID="NFT-19-Ihn">
             <objects>
-                <viewController id="fWT-QH-BHR" customClass="StartViewController" customModule="SpinCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NoQ-Bx-xNo" customClass="StartViewController" customModule="SpinCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="q4G-ZD-U6o"/>
-                        <viewControllerLayoutGuide type="bottom" id="WJH-CL-Zjh"/>
+                        <viewControllerLayoutGuide type="top" id="TUu-e6-vId"/>
+                        <viewControllerLayoutGuide type="bottom" id="bJV-4c-7aV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Me0-Ux-CeJ">
+                    <view key="view" contentMode="scaleToFill" id="aYQ-yp-FaZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-Zo-9x5">
-                                <rect key="frame" x="0.0" y="561" width="600" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-fo-RHN">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <color key="backgroundColor" red="0.19215686269999999" green="0.53333333329999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="knT-EH-g6d"/>
+                                    <constraint firstAttribute="height" constant="50" id="sgI-gK-MiE"/>
                                 </constraints>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.19215686269999999" green="0.53333333329999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startTimer:" destination="fWT-QH-BHR" eventType="touchUpInside" id="t87-E7-Eua"/>
-                                    <segue destination="tgk-x5-xCI" kind="show" id="pOi-o9-oox"/>
+                                    <action selector="startTimer:" destination="NoQ-Bx-xNo" eventType="touchUpInside" id="hN8-eh-IFh"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zz2-Vp-sNI">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PD9-uu-IS2">
                                 <rect key="frame" x="0.0" y="219" width="600" height="162"/>
-                                <color key="backgroundColor" red="0.86138791449999996" green="0.86138791449999996" blue="0.86138791449999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <date key="date" timeIntervalSinceReferenceDate="437189946.29610699">
-                                    <!--2014-11-09 01:39:06 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="437242233.98616302">
+                                    <!--2014-11-09 16:10:33 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjP-JO-nRb">
-                                <rect key="frame" x="279" y="190" width="43" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="J0W-je-Vvm"/>
-                                    <constraint firstAttribute="height" constant="21" id="Sg5-eh-FL4"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Washer/Dryer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s5-DC-rxC">
+                                <rect key="frame" x="0.0" y="141" width="298" height="81"/>
+                                <color key="backgroundColor" red="0.86138791449999996" green="0.86138791449999996" blue="0.86138791449999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyk-h5-hrh">
+                                <rect key="frame" x="298" y="141" width="302" height="81"/>
+                                <color key="backgroundColor" red="0.86138791449999996" green="0.86138791449999996" blue="0.86138791449999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" red="0.86138791449999996" green="0.86138791449999996" blue="0.86138791449999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="top" secondItem="CjP-JO-nRb" secondAttribute="bottom" constant="8" symbolic="YES" id="9O7-cv-JG3"/>
-                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="leading" secondItem="Me0-Ux-CeJ" secondAttribute="leading" id="LL6-0K-ET8"/>
-                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="centerX" secondItem="CjP-JO-nRb" secondAttribute="centerX" id="RIY-Gl-Gtl"/>
-                            <constraint firstAttribute="trailing" secondItem="zz2-Vp-sNI" secondAttribute="trailing" id="Rzb-9G-NfC"/>
-                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="trailing" secondItem="DDp-Zo-9x5" secondAttribute="trailing" id="X40-ZR-qcR"/>
-                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="centerY" secondItem="Me0-Ux-CeJ" secondAttribute="centerY" id="YF9-fF-bFG"/>
-                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="leading" secondItem="zz2-Vp-sNI" secondAttribute="leading" id="hmW-mu-8Ve"/>
-                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="bottom" secondItem="WJH-CL-Zjh" secondAttribute="top" id="qAR-Rg-sZx"/>
+                            <constraint firstAttribute="trailing" secondItem="gBb-fo-RHN" secondAttribute="trailing" id="Lq7-fC-TRf"/>
+                            <constraint firstItem="gBb-fo-RHN" firstAttribute="bottom" secondItem="bJV-4c-7aV" secondAttribute="top" id="S96-Br-qez"/>
+                            <constraint firstItem="gBb-fo-RHN" firstAttribute="leading" secondItem="PD9-uu-IS2" secondAttribute="leading" id="SAg-5q-5qW"/>
+                            <constraint firstItem="PD9-uu-IS2" firstAttribute="centerY" secondItem="aYQ-yp-FaZ" secondAttribute="centerY" id="dv9-8V-dwc"/>
+                            <constraint firstItem="PD9-uu-IS2" firstAttribute="leading" secondItem="aYQ-yp-FaZ" secondAttribute="leading" id="wHz-ma-13T"/>
+                            <constraint firstItem="gBb-fo-RHN" firstAttribute="trailing" secondItem="PD9-uu-IS2" secondAttribute="trailing" id="xao-l6-7EK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="datePicker" destination="zz2-Vp-sNI" id="d92-rq-gx4"/>
+                        <outlet property="datePicker" destination="PD9-uu-IS2" id="nm4-vu-FIo"/>
+                        <outlet property="numberMachineLabel" destination="iyk-h5-hrh" id="gGp-oK-vLz"/>
+                        <outlet property="typeMachineLabel" destination="8s5-DC-rxC" id="j6U-PX-QwT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ry-tQ-CYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v37-Tu-53R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="-691"/>
+            <point key="canvasLocation" x="804" y="-650"/>
         </scene>
         <!--Washer Info View Controller-->
         <scene sceneID="7HG-F8-D5J">
@@ -200,7 +203,4 @@
             <point key="canvasLocation" x="-469" y="48"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jrH-xR-Qek"/>
-    </inferredMetricsTieBreakers>
 </document>
