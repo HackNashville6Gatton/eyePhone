@@ -17,8 +17,14 @@ class WasherTableViewController: UITableViewController {
     var number: Int = 0 //And the number
     var status: Bool = true //And the status
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: Selector("refreshInvoked"), forControlEvents: UIControlEvents.ValueChanged)
+        refresh()
         
         var first = LaundryMachine(number: 1, typeOfMachine: LaundryMachine.Machine.Washer)
         first.inUse = false
@@ -31,6 +37,17 @@ class WasherTableViewController: UITableViewController {
         self.tableView.reloadData() //Reload the
        
     }
+    
+    //Mark - refresh
+    func refreshInvoked() {
+        refresh(viaPullToRefresh: true)
+    }
+    
+    func refresh(viaPullToRefresh: Bool = false) {
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+
 
     //TableView protocol methods that must be implemented
 
@@ -55,11 +72,11 @@ class WasherTableViewController: UITableViewController {
         if !self.machines[indexPath.row].inUse {
             cell.detailTextLabel!.text = "Open"
         }
+            
         else{
             cell.detailTextLabel!.text = NSString(format: "%f", self.machines[indexPath.row].timeRemaining)
             cell.detailTextLabel!.textColor = UIColor.redColor()
         }
-       // cell.imageView.image = UIImage(
         
         return cell //Return the created cell
     }
@@ -80,15 +97,25 @@ class WasherTableViewController: UITableViewController {
         
         if(self.machines[indexPath.row].inUse){
             var watchAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSString(format: "Watch(%d)", self.machines[indexPath.row].watchCount), handler:{action, indexpath in
+                
+                //Store all the information regarding the current machine being looked at
+                let machine = self.machines[indexPath.row]
+                let type = machine.typeMachine.rawValue
+                let num = machine.number
+                let description = String(format: "Now watching %@ %d", type, num)
                 //Update the watch count
                 self.machines[indexPath.row].watchCount = self.machines[indexPath.row].watchCount + 1
                 
-                //self.tableView.reloadData()
-                //self.performSegueWithIdentifier("startMachine", sender: self)
+                //Reload the data
+                self.tableView.reloadData()
+                
+                //Let user know they are watching the machine--I am hoping to change this to where we don't need to show an alert, it would automatically reload the information
+                var toast = UIAlertView(title: "Watching", message: description, delegate: self, cancelButtonTitle: "Ok")
+                toast.show()
             });
             
-            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
-            
+//            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
+            watchAction.backgroundColor = UIColor(red: 24/255.0, green:116/255.0, blue:205/255.0, alpha:1.0)
             
             return [watchAction];
         }
@@ -115,7 +142,8 @@ class WasherTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if segue.identifier == "startMachine" {
-            let startViewController = segue.destinationViewController as UIViewController
+            let startViewController = segue.destinationViewController as StartViewController
+            
         }
         
     }

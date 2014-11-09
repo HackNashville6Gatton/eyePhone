@@ -12,7 +12,6 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDatePicker()
@@ -31,16 +30,10 @@ class StartViewController: UIViewController {
         dateFormatter.dateFormat = "h:mm a"
         
         NSLog("%@", dateFormatter.stringFromDate(self.datePicker.date))
+        
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     func configureDatePicker() {
         self.datePicker.datePickerMode = .CountDownTimer

@@ -63,20 +63,22 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-Zo-9x5">
                                 <rect key="frame" x="0.0" y="561" width="600" height="39"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.53333333329999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="knT-EH-g6d"/>
                                 </constraints>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.19215686269999999" green="0.53333333329999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="startTimer:" destination="fWT-QH-BHR" eventType="touchUpInside" id="t87-E7-Eua"/>
+                                    <segue destination="tgk-x5-xCI" kind="show" id="pOi-o9-oox"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zz2-Vp-sNI">
                                 <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <color key="backgroundColor" red="0.86138791449999996" green="0.86138791449999996" blue="0.86138791449999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="437189946.29610699">
                                     <!--2014-11-09 01:39:06 +0000-->
                                 </date>
@@ -92,7 +94,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zz2-Vp-sNI" firstAttribute="top" secondItem="CjP-JO-nRb" secondAttribute="bottom" constant="8" symbolic="YES" id="9O7-cv-JG3"/>
                             <constraint firstItem="zz2-Vp-sNI" firstAttribute="leading" secondItem="Me0-Ux-CeJ" secondAttribute="leading" id="LL6-0K-ET8"/>
@@ -110,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ry-tQ-CYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="-479"/>
+            <point key="canvasLocation" x="1062" y="-691"/>
         </scene>
         <!--Washer Info View Controller-->
         <scene sceneID="7HG-F8-D5J">
@@ -167,7 +168,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.53333333329999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -180,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chD-E3-sTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="240"/>
+            <point key="canvasLocation" x="1062" y="48"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NcD-46-4ox">
@@ -196,7 +197,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYC-1D-hMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-449" y="201"/>
+            <point key="canvasLocation" x="-469" y="48"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jrH-xR-Qek"/>
+    </inferredMetricsTieBreakers>
 </document>
