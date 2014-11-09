@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C010DD691A0EEB9700E29BAB /* WasherInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010DD681A0EEB9700E29BAB /* WasherInfoViewController.swift */; };
+		C010DD6B1A0EFC5400E29BAB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010DD6A1A0EFC5400E29BAB /* StartViewController.swift */; };
 		C01937C51A0E72C300DD0DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937C41A0E72C300DD0DDA /* AppDelegate.swift */; };
 		C01937C71A0E72C300DD0DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01937C61A0E72C300DD0DDA /* ViewController.swift */; };
 		C01937CA1A0E72C300DD0DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01937C81A0E72C300DD0DDA /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C010DD681A0EEB9700E29BAB /* WasherInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WasherInfoViewController.swift; path = ViewControllers/WasherInfoViewController.swift; sourceTree = "<group>"; };
+		C010DD6A1A0EFC5400E29BAB /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C01937BF1A0E72C300DD0DDA /* SpinCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpinCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01937C31A0E72C300DD0DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01937C41A0E72C300DD0DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 		C01937B61A0E72C300DD0DDA = {
 			isa = PBXGroup;
 			children = (
+				C010DD681A0EEB9700E29BAB /* WasherInfoViewController.swift */,
 				C01937C11A0E72C300DD0DDA /* SpinCycle */,
 				C01937D71A0E72C300DD0DDA /* SpinCycleTests */,
 				C01937C01A0E72C300DD0DDA /* Products */,
@@ -88,6 +93,7 @@
 				C01937C61A0E72C300DD0DDA /* ViewController.swift */,
 				C01937E41A0E757D00DD0DDA /* LaundryMachine.swift */,
 				C01937C81A0E72C300DD0DDA /* Main.storyboard */,
+				C010DD6A1A0EFC5400E29BAB /* StartViewController.swift */,
 				C01937EA1A0E906500DD0DDA /* WasherTableViewController.swift */,
 				C01937CB1A0E72C300DD0DDA /* Images.xcassets */,
 				C01937CD1A0E72C300DD0DDA /* LaunchScreen.xib */,
@@ -228,8 +234,10 @@
 			files = (
 				C01937C71A0E72C300DD0DDA /* ViewController.swift in Sources */,
 				C01937E51A0E757D00DD0DDA /* LaundryMachine.swift in Sources */,
+				C010DD691A0EEB9700E29BAB /* WasherInfoViewController.swift in Sources */,
 				C01937C51A0E72C300DD0DDA /* AppDelegate.swift in Sources */,
 				C01937EB1A0E906500DD0DDA /* WasherTableViewController.swift in Sources */,
+				C010DD6B1A0EFC5400E29BAB /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="346" y="48"/>
         </scene>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="GdC-FM-RR4">
             <objects>
-                <viewController id="fWT-QH-BHR" sceneMemberID="viewController">
+                <viewController id="fWT-QH-BHR" customClass="StartViewController" customModule="SpinCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q4G-ZD-U6o"/>
                         <viewControllerLayoutGuide type="bottom" id="WJH-CL-Zjh"/>
@@ -64,29 +64,58 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-Zo-9x5">
                                 <rect key="frame" x="0.0" y="561" width="600" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="knT-EH-g6d"/>
+                                </constraints>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="fWT-QH-BHR" eventType="touchUpInside" id="t87-E7-Eua"/>
+                                </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zz2-Vp-sNI">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="437189946.29610699">
+                                    <!--2014-11-09 01:39:06 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjP-JO-nRb">
+                                <rect key="frame" x="279" y="190" width="43" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="J0W-je-Vvm"/>
+                                    <constraint firstAttribute="height" constant="21" id="Sg5-eh-FL4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="top" secondItem="q4G-ZD-U6o" secondAttribute="bottom" constant="497" id="OCO-jQ-v3o"/>
-                            <constraint firstAttribute="trailing" secondItem="DDp-Zo-9x5" secondAttribute="trailing" id="RkV-f4-nl1"/>
-                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="leading" secondItem="Me0-Ux-CeJ" secondAttribute="leading" id="UBs-JE-YCY"/>
-                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="bottom" secondItem="WJH-CL-Zjh" secondAttribute="top" id="ucF-mb-Xbo"/>
+                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="top" secondItem="CjP-JO-nRb" secondAttribute="bottom" constant="8" symbolic="YES" id="9O7-cv-JG3"/>
+                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="leading" secondItem="Me0-Ux-CeJ" secondAttribute="leading" id="LL6-0K-ET8"/>
+                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="centerX" secondItem="CjP-JO-nRb" secondAttribute="centerX" id="RIY-Gl-Gtl"/>
+                            <constraint firstAttribute="trailing" secondItem="zz2-Vp-sNI" secondAttribute="trailing" id="Rzb-9G-NfC"/>
+                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="trailing" secondItem="DDp-Zo-9x5" secondAttribute="trailing" id="X40-ZR-qcR"/>
+                            <constraint firstItem="zz2-Vp-sNI" firstAttribute="centerY" secondItem="Me0-Ux-CeJ" secondAttribute="centerY" id="YF9-fF-bFG"/>
+                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="leading" secondItem="zz2-Vp-sNI" secondAttribute="leading" id="hmW-mu-8Ve"/>
+                            <constraint firstItem="DDp-Zo-9x5" firstAttribute="bottom" secondItem="WJH-CL-Zjh" secondAttribute="top" id="qAR-Rg-sZx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="zz2-Vp-sNI" id="d92-rq-gx4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ry-tQ-CYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="-427"/>
+            <point key="canvasLocation" x="1182" y="-479"/>
         </scene>
-        <!--Washer Information View Controller-->
+        <!--Washer Info View Controller-->
         <scene sceneID="7HG-F8-D5J">
             <objects>
-                <viewController id="eNb-Df-Tgt" customClass="WasherInformationViewController" customModule="SpinCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eNb-Df-Tgt" customClass="WasherInfoViewController" customModule="SpinCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y6L-mz-m0b"/>
                         <viewControllerLayoutGuide type="bottom" id="8gX-NB-mQ6"/>
@@ -142,6 +171,12 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="kindOfMachineLabel" destination="NDO-S8-E36" id="Pgn-BB-fF4"/>
+                        <outlet property="machineNumberLabel" destination="YcB-cH-bCE" id="NxG-CM-22k"/>
+                        <outlet property="statusLabel" destination="9Hf-iI-l7m" id="put-Op-Wk5"/>
+                        <outlet property="watchersLabel" destination="VNf-WK-pBI" id="y1b-Dz-YNW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chD-E3-sTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
