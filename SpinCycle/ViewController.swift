@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         var machine = LaundryMachine(number: 9, typeOfMachine: LaundryMachine.Machine.Washer)
         
+        
+       
     }
     
     

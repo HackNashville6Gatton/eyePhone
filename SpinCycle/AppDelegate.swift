@@ -15,9 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:")))
+        {
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+        }
+
         // Override point for customization after application launch.
         return true
     }
+    
+//    //Needed to send notifications
+//    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+//        // Override point for customization after application launch.
+//        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:")))
+//        {
+//            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+//        }
+//        else
+//        {
+//            //do iOS 7 stuff, which is pretty much nothing for local notifications.
+//        }
+//        return true
+//    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

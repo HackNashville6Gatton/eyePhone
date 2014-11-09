@@ -51,14 +51,28 @@ class StartViewController: UIViewController {
         let endHour = (hoursUsed.toInt()! + currentHours.toInt()!) % 24
         let endMinute = (minutesUsed.toInt()! + currentMinutes.toInt()!) % 60
         
-        let endTime = String(format: "%d:%d", arguments: [endHour, endMinute])//end time will be the time the timer is supposed to go off
+        //Find the current date. Laundry won't ever go over
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        let monthDayYear = dateFormatter.stringFromDate(NSDate())
+        
+        
+        let endTime = String(format: "%@ %d:%d", arguments: [monthDayYear, endHour, endMinute])//end time will be the time the timer is supposed to go off
         
         
         NSLog("%@ end time", endTime)
-        dateFormatter.dateFormat = "H:mm" //Change the formatter type
+        
+        dateFormatter.dateFormat = "MM-dd-yyyy H:mm"
         var dateFromString = dateFormatter.dateFromString(endTime) //Now create the date string for the end time of the machine.
         NSLog("%@  dateFromString", dateFromString!)
         NSLog("%@  stringFromDate", dateFormatter.stringFromDate(dateFromString!))
+        
+        
+        var notification = UILocalNotification()
+        notification.timeZone = NSTimeZone.defaultTimeZone()
+        
+        notification.fireDate = dateFromString
+        notification.alertBody = "Your laundry is done!"
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     func findHourMinute(formatDate: String) -> [String]{
