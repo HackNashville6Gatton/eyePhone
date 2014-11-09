@@ -109,6 +109,7 @@
                     <connections>
                         <outlet property="datePicker" destination="PD9-uu-IS2" id="nm4-vu-FIo"/>
                         <outlet property="numberMachineLabel" destination="iyk-h5-hrh" id="gGp-oK-vLz"/>
+                        <outlet property="startButton" destination="gBb-fo-RHN" id="nfV-Ed-KKO"/>
                         <outlet property="typeMachineLabel" destination="8s5-DC-rxC" id="j6U-PX-QwT"/>
                     </connections>
                 </viewController>

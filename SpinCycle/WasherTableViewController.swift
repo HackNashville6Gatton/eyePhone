@@ -137,7 +137,8 @@ class WasherTableViewController: UITableViewController {
                 });
                 
                 //            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
-                watchAction.backgroundColor = UIColor(red: 24/255.0, green:116/255.0, blue:205/255.0, alpha:1.0)
+                //Seafoam green color
+                watchAction.backgroundColor = UIColor(red: 145/255.0, green:218/255.0, blue:189/255.0, alpha:1.0)
                 
                 return [watchAction];
             }
