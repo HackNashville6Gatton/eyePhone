@@ -16,7 +16,7 @@ class WasherTableViewController: UITableViewController {
     var type :String = "" //And the type
     var number: Int = 0 //And the number
     var status: Bool = true //And the status
-    
+    let userDefaults = NSUserDefaults.standardUserDefaults() //Get user defaults
     //Retrieve the user's current device information
     var user: User = User(idNum: UIDevice.currentDevice().identifierForVendor) //now instantiate our own user class
     
@@ -37,11 +37,12 @@ class WasherTableViewController: UITableViewController {
         self.machines = [first, second,LaundryMachine(number: 3, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 4, typeOfMachine: LaundryMachine.Machine.Washer),LaundryMachine(number: 5, typeOfMachine: LaundryMachine.Machine.Washer), LaundryMachine(number: 1, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 2, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 3, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 4, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 5, typeOfMachine: LaundryMachine.Machine.Dryer), LaundryMachine(number: 6, typeOfMachine: LaundryMachine.Machine.Dryer)]
         
         
-        self.tableView.reloadData() //Reload the
-       
+        self.tableView.reloadData() //Reload the table
+        
+        
     }
     
-    //Mark - refresh
+    //MARK: - refresh
     func refreshInvoked() {
         refresh(viaPullToRefresh: true)
     }
@@ -51,7 +52,8 @@ class WasherTableViewController: UITableViewController {
         self.refreshControl?.endRefreshing()
     }
 
-
+    
+    //MARK: TableView-Protocols
     //TableView protocol methods that must be implemented
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,6 +136,7 @@ class WasherTableViewController: UITableViewController {
                     //Let user know they are watching the machine--I am hoping to change this to where we don't need to show an alert, it would automatically reload the information
                     var toast = UIAlertView(title: "Watching", message: description, delegate: self, cancelButtonTitle: "Ok")
                     toast.show()
+                    
                 });
                 
                 //            watchAction.backgroundColor = UIColor(red:0.35, green:0.84, blue:0.81, alpha:1.0)
@@ -147,8 +150,6 @@ class WasherTableViewController: UITableViewController {
         
         else{
             var startAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Start", handler:{action, indexpath in
-                //Update the watch count
-                //self.machines[indexPath.row].inUse = true
                 self.performSegueWithIdentifier("startMachine", sender: self)
                 
             });
@@ -168,6 +169,11 @@ class WasherTableViewController: UITableViewController {
         
         if segue.identifier == "startMachine" {
             let startViewController = segue.destinationViewController as StartViewController
+            
+//            //Set these values
+//            startViewController.numberMachineLabel = String(self.machines[indexPath!.row].number)
+//            startViewController.typeMachineLabel   = self
+            
             
         }
         

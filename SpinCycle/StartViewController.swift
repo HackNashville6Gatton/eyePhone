@@ -10,11 +10,18 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+
     
     @IBOutlet weak var typeMachineLabel: UILabel!
     @IBOutlet weak var numberMachineLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var startButton: UIButton!
+    
+    //Variables to store null values until the VC is called and values are passed by preparesegue in WasherTableViewController
+    var typeMachineString = ""
+    var numberMachine = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,15 +55,25 @@ class StartViewController: UIViewController {
         let currentHours = secondDateArray[0] //Hours of current
         let currentMinutes = secondDateArray[1] //Minutes of current time
         
-        let endHour = (hoursUsed.toInt()! + currentHours.toInt()!) % 24
-        let endMinute = (minutesUsed.toInt()! + currentMinutes.toInt()!) % 60
+        var endMinutes = (minutesUsed.toInt()! + currentMinutes.toInt()!) //Set the end minutes
+        //let endMinute = (minutesUsed.toInt()! + currentMinutes.toInt()!) % 60
+        
+        var endHour = (hoursUsed.toInt()! + currentHours.toInt()!) //Set the end hours
+        
+        //If the number of minutes is greater than 60, then we have to add an extra hour to the hours place
+        if endMinutes >  60{
+            endHour =  endHour + 1
+        }
+        
+        endMinutes = endMinutes % 60 //Now get the correct number of minutes using modulus
+        endHour = endHour % 24 //Now get the correct number of hours using modulus
         
         //Find the current date. Laundry won't ever go over
         dateFormatter.dateFormat = "MM-dd-yyyy"
         let monthDayYear = dateFormatter.stringFromDate(NSDate())
         
         
-        let endTime = String(format: "%@ %d:%d", arguments: [monthDayYear, endHour, endMinute])//end time will be the time the timer is supposed to go off
+        let endTime = String(format: "%@ %d:%d", arguments: [monthDayYear, endHour, endMinutes])//end time will be the time the timer is supposed to go off
         
         
         NSLog("%@ end time", endTime)
